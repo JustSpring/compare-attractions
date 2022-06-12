@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block title %}
+    About
+{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html  dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <section class="about_section" id="About">
+        <div class="about_img">
+            <img src="./img/about-us.png" alt="">
+        </div>
+        <div class="about_details">
+            <h1>אודות</h1>
+            <h5>האתר נבנה ע"י אביב פרידמן במטרה לייעל את תהליך מציאת ההנחות לאטרקציות ולארגן את כל המידע במקום אחד.</h5>
+            <h2><strong>איך זה עובד?</strong></h2>
+            <h5>כל יום בחצות, מופעל תוכנת פייטון הנכנסת לאתרים של כל ההנחות לאטרקציות של 5 חברות האשראי המובילות: לאומי, מקס, אמריקן אקספרס, ישראכרט, כאל. בנוסף נכנסת לקופונופש. היא אוספת את המידע הרלוונטי על האטרקציה כמו מחיר, נקודות, אחד פלוס אחד ועוד. התוכנה מארגנת את כל הנתונים בקובץ נתונים אחד. ואז מעבדת את הנתונים והופכת את הרשימה לרשימה אחת מסודרת של כל האטרקציות שיש (לדוגמא צריכה לקבוע ש- "מוזיאון העם היהודי" בחברה אחת זה אותו אטרקציה כמו "מוזיאון אנו" בחברה שונה")  </h5>
+
+    </section>
+    <section class="form">
+            <h1><strong>מצאתם תקלה או אטרקציה חסרה? נשמח לשמוע!</strong>
+                <br>ניתן ליצור קשר בשאלון הבא</h1>
+<script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "eu1",
+    portalId: "25933494",
+    formId: "67c8a641-e791-44d8-8323-40b8e79c8655"
+  });
+</script>
+        </section>
+
+
+
+
+
+
+</body>
+</html>
+<style>
+h2{text-align: right;}
+h5{text-align: right;}
+label{text-align: right;}
+.form{
+text-align: right;
+}
+
+.submit_btn{
+
+                    cursor: pointer;
+                    outline: 0;
+                    color: #fff;
+                    background-color: #0d6efd;
+                    border-color: #0d6efd;
+                    display: inline-block;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    text-align: center;
+                    border: 1px solid transparent;
+                    padding: 6px 12px;
+                    font-size: 16px;
+                    border-radius: .25rem;
+                    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                    :hover {
+                        color: #fff;
+                        background-color: #0b5ed7;
+                        border-color: #0a58ca;
+                    }
+
+}
+
+.about_details h1{
+    text-align: right;
+    font-size: 58px;
+    color: black;
+    position: relative;
+}.about_details h1::after{
+text-align: right;
+    content: " ";
+    position: absolute;
+    width: 120px;
+    height: 4px;
+    background-color: #f39c12;
+    border-radius: 5px;
+    right: 0;
+    bottom: 2px;
+}
+
+.about_details p{
+text-align: right;
+    font-size: 15px;
+    color: black;
+    margin: 10px 0 10px 0;
+    line-height: 29px;
+}
+.btn{
+    padding: 10px 25px;
+    border: 2px solid #f39c12;
+    border-radius: 5px;
+    color: #f39c12;
+    text-decoration: none;
+    margin: 30px 0;
+    transition: all .5s ease;
+    font-weight: 600;
+}
+.btn:hover{
+    background-color: #f39c12;
+    color: #333;
+}
+.btn1{
+    margin-right: 15px;
+    background-color: #f39c12;
+    color: #000;
+}
+.btn1:hover{
+    background-color: transparent;
+    color: #f39c12;
+}
+
+
+
+</style>
+{% endblock %}

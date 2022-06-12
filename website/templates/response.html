@@ -1,0 +1,51 @@
+<style>
+        th:link{
+        color: #0AA1DD
+        }
+        h3{text-align: right;}
+        th{text-align: right;}
+        td{text-align: right;}
+.styled-table {
+    border-collapse: collapse;
+    font-size: 1em;
+    font-family: sans-serif;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: right;
+}
+.styled-table thead tr {
+    background-color: #0AA1DD;
+    color: #ffffff;
+    text-align: right;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #0AA1DD;
+}
+    </style>
+<h3>‏{{numrows}} אטרקציות נמצאו </h3>
+<table class="styled-table" dir="rtl">
+  <thead>
+      <tr>
+         <th style = "direction: rtl;">שם</th>
+          <th style = "direction: rtl;">לינק</th>
+      </tr>
+  </thead>
+  <tbody>
+{% for i in employee %}
+   <tr>
+    <td style = "direction: rtl;">{{i[1]}}</td>
+       <td><a href="/item?id={{i[0]}}">מעבר להשוואה</a></td>
+   </tr>
+{% endfor %}

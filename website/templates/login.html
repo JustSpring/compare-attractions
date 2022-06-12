@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+<head>
+    <dev class="right">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>כניסה</h1>
+        </dev>
+</head>
+
+<body>
+
+    <form method="POST" action="" class="right">
+        {{ form.hidden_tag() }}
+        {{ form.username }}
+        {{ form.password }}
+        {{ form.submit }}
+    </form>
+    <br>
+    <dev class="right">
+<h3>הכניסה לאנשים מורשים בלבד.</h3>
+        </dev>
+</body>
+<style>
+    .right{
+text-align: right;
+
+    h3{text-align: right;}
+
+
+
+</style>
+{% endblock %}

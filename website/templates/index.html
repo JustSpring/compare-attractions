@@ -1,0 +1,162 @@
+
+
+
+<!DOCTYPE html>
+<html dir="rtl">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Flask Live Data Search using Jquery Ajax and MySql Database</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  load_data();
+  function load_data(query)
+  {
+   $.ajax({
+    url:"/ajaxlivesearch",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+      $('#result').html(data);
+      $("#result").append(data.htmlresponse);
+    }
+   });
+  }
+  $('#search_text').keyup(function(){
+    var search = $(this).val();
+    if(search != ''){
+    load_data(search);
+   }else{
+    load_data();
+   }
+  });
+});
+</script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="navbar-brand" href="#">השוואה</a>
+          <a class="nav-item nav-link" id="home" href="/">חיפוש</a>
+          <a class="nav-item nav-link" id="Search" href="/about">אודות</a>
+
+
+        </div>
+      </div>
+    </nav>
+
+<div class="container search-table">
+    <div class="about_details">
+        <h1 align="center">חיפוש אטרקציות</h1>
+    </div>
+    <hr>
+            <div class="search-box">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>הכנס את שם האטרקציה</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" name="search_text" id="search_text" class="form-control" placeholder="לדוגמא: ג'ונגל כיף">
+                    </div>
+                </div>
+            </div>
+   <div id="result"></div>
+</div>
+<script>
+  hbspt.forms.create({
+    region: "eu1",
+    portalId: "25933494",
+    formId: "67c8a641-e791-44d8-8323-40b8e79c8655"
+  });
+</script>
+
+
+<style>
+hr {width: 60%;margin-left: auto;margin-right: auto;height: 4px;background-color:#ADD8E6;}
+.about_details h1{
+    text-align: center;
+    font-size: 58px;
+    color: black;
+    position: relative;
+}
+.form{
+text-align: right;
+margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+h5{text-align: right;}
+.search-table{
+    direction: rtl;
+    padding: 10%;
+    margin-top: -6%;
+}
+
+.search-box{
+    background-color:#2155CD;
+    padding:50px 50px 30px;
+    margin:80px 0;
+    position:relative;
+    color: white;
+    -moz-border-radius:16px;
+    -webkit-border-radius:16px;
+    border-radius:16px;
+}
+.search-box input:focus{
+    direction: rtl;
+    box-shadow:none;
+    border:2px solid #eeeeee;
+}
+.search-list{
+    direction: rtl;
+    background: #fff;
+    border: 1px solid #ababab;
+    border-top: none;
+}
+.search-list h3{
+    direction: rtl;
+    background: #eee;
+    padding: 3%;color:#fe6f41;
+    margin-bottom: 0%;
+}
+  footer {
+  background-color:white;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+
+</style>
+    <section class="form">
+            <h1><strong>מצאתם תקלה או אטרקציה חסרה? נשמח לשמוע!</strong>
+                <br>ניתן ליצור קשר בשאלון הבא</h1>
+<script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    region: "eu1",
+    portalId: "25933494",
+    formId: "67c8a641-e791-44d8-8323-40b8e79c8655"
+  });
+</script>
+        </section>
+</body>
+<footer>
+  <p class="footer"> כל הזכויות שמורות לאביב פרידמן ולאתרי חברות ההטבות 2022 &copy;</p>
+</footer>
+</html>

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block title %}
+Viewer
+{% endblock %}
+
+
+{% block content %}
+<!--<hr>-->
+<!--<h2>Create Something</h2>-->
+<!--<form action='/host' method="POST">-->
+<!--    Title:<input type="text" name="title" id="title">-->
+<!--    <br>-->
+<!--    <input type="submit" value="Post">-->
+<!--</form>-->
+<!--<hr>-->
+<br>
+<button align="right" class="button" onclick="history.back()">חזרה לחיפוש</button>
+<br>
+<br>
+<br>
+<br>
+
+<h2 class="title"> <strong>השוואת מחירי האטרקציה:</strong> {{name}}</strong></h2>
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>חברה</th>
+            <th>מחיר</th>
+            <th>אחד פלוס אחד</th>
+            <th>נקודות</th>
+            <th>קישור</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in info %}
+        <tr>
+            <td>{%if item[1]=="leumi"%}לאומי{%elif item[1]=="cal"%}כאל{%elif item[1]=="cuponofesh"%}קופונופש{%elif item[1]=="isracard"%}ישראכרט{%elif item[1]=="americanexpress"%}אמריקן אקספרס{%elif item[1]=="max"%}מקס{% endif %}</td>
+            <td>{%if item[3]==""%}-{% else %}{{item[3]}}₪{% endif %} </td>
+            {%if item[5]==1%}
+            <td  style="color:green;">&#10004</td>
+            {% else %}
+            <td style="color:red;">✖</td>
+            {% endif %}
+
+            <td> {{item[6]}} {%if item[1]=="americanexpress" and item[6]!=""%}<img src="https://rewards.americanexpress.co.il/contentassets/4992f805717247cfaa8c83a9b6264adf/gold_card.jpg" width="50px">{%elif item[1]=="leumi"and item[6]!=""%}<img src="https://www.leumi.co.il/realcommerce-dpm/realcommerce/images/Benefit/BenefitItem/goodi-icon.png" width="30px">{%elif item[1]=="max" and item[6]!=""%}פינוקים{%elif item[1]=="cal" and item[6]!=""%}חוויות{% else %}-{% endif %}</td>
+
+
+            <td><a href="{{item[8]}}" target="_blank"> קניית ההטבה </a></td>
+        </tr>
+        {% endfor %}
+
+        <!-- and so on... -->
+    </tbody>
+</table>
+
+<style>
+    .title{
+    text-align: right;
+
+}
+    .styled-table {
+    border-collapse: collapse;
+    font-size: 1.5em;
+    font-family: sans-serif;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: right;
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: right;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.button{
+    float: right;
+    cursor: pointer;
+    outline: 0;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #0d6efd;
+    border-color: #0d6efd;
+    :hover {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+
+}
+}
+
+
+</style>
+
+
+    {% endblock %}

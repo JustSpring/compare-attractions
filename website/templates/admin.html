@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+Admin Page
+{% endblock %}
+{from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField}
+
+
+{% block content %}
+<table class="table table-hover table-dark">
+    <thead>
+    <tr>
+        <!-- Your Columns HERE -->
+        <th scope="col">ID</th>
+        <th scope="col">Company</th>
+        <th scope="col">name</th>
+        <th scope="col">Price</th>
+        <th scope="col">discount</th>
+        <th scope="col">plus_one</th>
+        <th scope="col">points</th>
+        <th scope="col">city</th>
+        <th scope="col">link</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Your rows inside the table HERE: -->
+    {% for item in items %}
+    <tr>
+        <td>{{item[0]}}</td>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}₪</td>
+        <td>{{item[4]}}</td>
+        <td>{{item[5]}}</td>
+        <td>{{item[6]}}</td>
+        <td>{{item[7]}}</td>
+        <td>
+            <a href="{{item[8]}}" target="_blank"> {{item[8]}} </a>
+        <!--<td>{{item[8]}}</td> -->
+        </td>
+        <td>
+            <h1>Button</h1>
+        </td>
+        <td>
+            <button class="btn btn-outline btn-info">More Info</button>
+            <button class="btn btn-outlinr btn-success">Purchase This Item</button>
+
+        </td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table><!-- Optional JavaScript; choose one of the two! -->
+{% endblock %}
