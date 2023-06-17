@@ -20,5 +20,5 @@
 
 ## The site today
 * Unfortunately, the site's public activity was limited for only several months before closing. This happened as a result of other websites offering comparable comparisons that made my site less competitive. Moreover, the demand of ensuring site activity and regularly updating proved to be almost impossible due to time constraints. 
-* The last time the program made an updated list was on 12.6.22 with 198 different attractions.
+* The last time the program made an updated list was on 12.6.2022 with 198 different attractions.
   
